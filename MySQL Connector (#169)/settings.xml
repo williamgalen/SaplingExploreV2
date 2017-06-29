@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+<entry key="node_file" type="xstring" value="settings.xml"/>
+<config key="flow_stack"/>
+<config key="internal_node_subsettings">
+<entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+</config>
+<config key="model">
+<entry key="driver" type="xstring" value="com.mysql.jdbc.Driver"/>
+<entry key="database" type="xstring" value="jdbc:mysql://liveherepl.saplinglearning.com:3306/cms?useOldAliasMetadataBehavior=true"/>
+<entry key="user" type="xstring" value="wgalenreader"/>
+<entry key="password" type="xstring" value="SheilaWill02116"/>
+<entry key="timezone" type="xstring" value="current"/>
+<entry key="validateConnection" type="xboolean" value="false"/>
+<entry key="retrieveMetadataInConfigure" type="xboolean" value="true"/>
+<entry key="allowSpacesInColumnNames" type="xboolean" value="true"/>
+<entry key="rowIdsStartWithZero" type="xboolean" value="true"/>
+<entry key="databaseIdentifier" type="xstring" value="mysql"/>
+<entry key="kerberos" type="xboolean" value="false"/>
+<config key="default-connection">
+<entry key="hostname" type="xstring" value="liveherepl.saplinglearning.com"/>
+<entry key="port" type="xint" value="3306"/>
+<entry key="databaseName" type="xstring" value="cms"/>
+</config>
+</config>
+<config key="nodeAnnotation">
+<entry key="text" type="xstring" value="SaplingLearning"/>
+<entry key="bgcolor" type="xint" value="16777215"/>
+<entry key="x-coordinate" type="xint" value="847"/>
+<entry key="y-coordinate" type="xint" value="1839"/>
+<entry key="width" type="xint" value="107"/>
+<entry key="height" type="xint" value="13"/>
+<entry key="alignment" type="xstring" value="CENTER"/>
+<entry key="borderSize" type="xint" value="0"/>
+<entry key="borderColor" type="xint" value="16777215"/>
+<entry key="defFontSize" type="xint" value="11"/>
+<entry key="annotation-version" type="xint" value="20151123"/>
+<config key="styles"/>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="EXECUTED"/>
+<entry key="factory" type="xstring" value="org.knime.database.connectors.mysql.MySQLConnectorNodeFactory"/>
+<entry key="node-name" type="xstring" value="MySQL Connector"/>
+<entry key="node-bundle-name" type="xstring" value="KNIME connectors to common databases"/>
+<entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.database.connectors"/>
+<entry key="node-bundle-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-bundle-version" type="xstring" value="3.3.1.v201612191042"/>
+<entry key="node-feature-name" type="xstring" value="KNIME Connectors for Common Databases"/>
+<entry key="node-feature-symbolic-name" type="xstring" value="org.knime.features.dbdrivers.feature.group"/>
+<entry key="node-feature-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-feature-version" type="xstring" value="3.3.1.v201612192115"/>
+<config key="factory_settings"/>
+<entry key="name" type="xstring" value="MySQL Connector"/>
+<entry key="hasContent" type="xboolean" value="true"/>
+<entry key="isInactive" type="xboolean" value="false"/>
+<config key="ports">
+<config key="port_1">
+<entry key="index" type="xint" value="1"/>
+<entry key="port_spec_class" type="xstring" value="org.knime.core.node.port.database.DatabaseConnectionPortObjectSpec"/>
+<entry key="port_object_class" type="xstring" value="org.knime.core.node.port.database.DatabaseConnectionPortObject"/>
+<entry key="port_object_summary" type="xstring" value="DB: mysql URL: jdbc:mysql://liveherepl.saplinglearning.com:3306/cms?useOldAliasMetadataBehavior=true"/>
+<entry key="port_spec_location" type="xstring" value="spec/spec.zip"/>
+<entry key="port_object_location" type="xstring" value="object/portobject.zip"/>
+<entry key="port_dir_location" type="xstring" value="port_1"/>
+</config>
+</config>
+<config key="filestores">
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" value="b9060217-6cca-454b-b114-1ce7670336f2"/>
+</config>
+</config>

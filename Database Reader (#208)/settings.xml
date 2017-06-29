@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+<entry key="node_file" type="xstring" value="settings.xml"/>
+<config key="flow_stack"/>
+<config key="internal_node_subsettings">
+<entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+</config>
+<config key="model">
+<entry key="statement" type="xstring" value="SELECT discipline, SUM(IF(latesubmits=0, 1, 0)) latecountasgn,%%00010%%00009COUNT(latesubmits) allcountasgn,%%00010%%00009ROUND(100*SUM(IF(latesubmits=0, 1, 0))/COUNT(latesubmits)) pctasgn%%00010FROM (%%00010 %%00010SELECT sj.name discipline, C.id courseid, IBIS.id asgnid, SR.Student_User_ID userid, %%00010%%00009SUM(IF(IBIS.timedue + IFNULL(IEDD.timeext, 0) &lt; UNIX_TIMESTAMP(SR.Date_Modified), 1, 0)) latesubmits%%00010FROM cms.course C%%00010JOIN sl_course_settings cs %%00010%%00009ON cs.course_id = C.id%%00010%%00009AND cs.institution NOT IN (200,2362)%%00010JOIN content.subject sj ON sj.Key = cs.Subject_ID%%00010JOIN cms.ibis IBIS ON IBIS.course = C.id%%00010JOIN ibis.StudentAssignmentAttempt SAA %%00010%%00009ON SAA.Assignment_ID = IBIS.id%%00010%%00009AND Preview = 0%%00010JOIN ibis.StudentResponse SR ON SR.Assignment_Attempt_ID = %%00010%%00009%%00009SAA.Assignment_Attempt_ID%%00010JOIN ibis.Assignment A %%00010%%00009ON A.AssignmentID = IBIS.id%%00010JOIN cms.course_modules CM %%00010%%00009ON CM.instance = IBIS.id%%00010%%00009AND CM.module = 7%%00010LEFT JOIN cms.ibis_extended_due_dates IEDD%%00010%%00009ON IEDD.course_modules_id = CM.id%%00010%%00009AND IEDD.user_id = SR.Student_User_ID%%00010JOIN cms.grade_items GI %%00010%%00009ON GI.iteminstance = IBIS.id%%00010%%00009AND GI.itemmodule = 'ibis'%%00010JOIN cms.grade_grades GG %%00010%%00009ON GG.itemid = GI.id%%00010%%00009AND GG.userid = SR.Student_User_ID%%00010JOIN cms.user U ON U.id = SR.Student_User_ID%%00010 %%00010WHERE C.category IN (5,20)%%00010%%00009AND C.startdate &gt;= UNIX_TIMESTAMP('2016-07-01')%%00010%%00009AND C.startdate &lt; UNIX_TIMESTAMP('2017-01-01')%%00010%%00009AND GG.percentcomplete &gt; 0%%00010%%00009AND IBIS.timedue &gt; 0%%00010 %%00010GROUP BY sj.name, C.id, IBIS.id, SR.Student_User_ID%%00010ORDER BY sj.name, C.id, IBIS.id, SR.Student_User_ID%%00010) AS byuser%%00010 %%00010GROUP BY discipline%%00010ORDER BY discipline"/>
+<entry key="execute_without_configure" type="xboolean" value="true"/>
+<entry key="driver" type="xstring" value="com.mysql.jdbc.Driver"/>
+<entry key="database" type="xstring" value="jdbc:mysql://&lt;host&gt;:&lt;port&gt;/&lt;database_name&gt;"/>
+<entry key="user" type="xstring" value=""/>
+<entry key="password" type="xstring" value=""/>
+<entry key="timezone" type="xstring" value="current"/>
+<entry key="validateConnection" type="xboolean" value="false"/>
+<entry key="retrieveMetadataInConfigure" type="xboolean" value="false"/>
+<entry key="allowSpacesInColumnNames" type="xboolean" value="true"/>
+<entry key="rowIdsStartWithZero" type="xboolean" value="false"/>
+<entry key="databaseIdentifier" type="xstring" isnull="true" value=""/>
+<entry key="kerberos" type="xboolean" value="false"/>
+</config>
+<config key="nodeAnnotation">
+<entry key="text" type="xstring" value="% assignments%%00010submitted by%%00010due date  %%00010by discipline"/>
+<entry key="bgcolor" type="xint" value="16777215"/>
+<entry key="x-coordinate" type="xint" value="148"/>
+<entry key="y-coordinate" type="xint" value="1219"/>
+<entry key="width" type="xint" value="107"/>
+<entry key="height" type="xint" value="52"/>
+<entry key="alignment" type="xstring" value="CENTER"/>
+<entry key="borderSize" type="xint" value="0"/>
+<entry key="borderColor" type="xint" value="16777215"/>
+<entry key="defFontSize" type="xint" value="11"/>
+<entry key="annotation-version" type="xint" value="20151123"/>
+<config key="styles"/>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="EXECUTED"/>
+<entry key="factory" type="xstring" value="org.knime.base.node.io.database.DBReaderNodeFactory"/>
+<entry key="node-name" type="xstring" value="Database Reader"/>
+<entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
+<entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.base"/>
+<entry key="node-bundle-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-bundle-version" type="xstring" value="3.3.2.v201704060940"/>
+<entry key="node-feature-name" type="xstring" value="KNIME Core"/>
+<entry key="node-feature-symbolic-name" type="xstring" value="org.knime.features.base.feature.group"/>
+<entry key="node-feature-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-feature-version" type="xstring" value="3.3.2.v201704061137"/>
+<config key="factory_settings"/>
+<entry key="name" type="xstring" value="Database Reader"/>
+<entry key="hasContent" type="xboolean" value="true"/>
+<entry key="isInactive" type="xboolean" value="false"/>
+<config key="ports">
+<config key="port_1">
+<entry key="index" type="xint" value="1"/>
+<entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+<entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 25, Cols: 4"/>
+<entry key="port_dir_location" type="xstring" value="port_1"/>
+</config>
+</config>
+<config key="filestores">
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" isnull="true" value=""/>
+</config>
+</config>

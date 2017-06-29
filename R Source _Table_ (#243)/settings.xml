@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+<entry key="node_file" type="xstring" value="settings.xml"/>
+<config key="flow_stack"/>
+<config key="internal_node_subsettings">
+<entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+</config>
+<config key="model">
+<entry key="script" type="xstring" value="if (!require(&quot;gplots&quot;)) {%%00010   install.packages(&quot;gplots&quot;, dependencies = TRUE)%%00010   library(gplots)%%00010   }%%00010if (!require(&quot;RColorBrewer&quot;)) {%%00010   install.packages(&quot;RColorBrewer&quot;, dependencies = TRUE)%%00010   library(RColorBrewer)%%00010   }%%00010 %%00010discipline &lt;- c(  %%00010&quot;Analytical Chemistry&quot;,&quot;Anatomy &amp; Physiology&quot;,&quot;Astronomy&quot;,&quot;Biochemistry&quot;,%%00010&quot;Biology&quot;,&quot;General Chemistry&quot;,&quot;General Chemistry Lab&quot;,&quot;General, Organic,and Biochemistry&quot;,%%00010&quot;Genetics&quot;,&quot;GOB Lab&quot;,&quot;Inorganic Chemistry&quot;,&quot;Introduction to Statistics&quot;,%%00010&quot;Introductory Chemistry&quot;,&quot;Introductory Chemistry Lab&quot;,&quot;Mass and Energy Balances&quot;,%%00010&quot;Organic Chemistry&quot;,&quot;Organic Chemistry Lab&quot;,&quot;Physical Sciences&quot;,&quot;Physics (Algebra-Based)&quot;,%%00010&quot;Physics (Calculus-Based)&quot;,&quot;Physics (Conceptual)&quot;,&quot;Principles of Economics&quot;,%%00010&quot;Principles of Macroeconomics&quot;,&quot;Principles of Microeconomics&quot;,&quot;Thermodynamics&quot;)%%00010 %%00010shortform &lt;- c(  %%00010&quot;Analytical Chemistry&quot;,&quot;Anatomy &amp; Physiology&quot;,&quot;Astronomy&quot;,&quot;Biochemistry&quot;,%%00010&quot;Biology&quot;,&quot;General Chemistry&quot;,&quot;General Chemistry Lab&quot;,&quot;GOB&quot;,%%00010&quot;Genetics&quot;,&quot;GOB Lab&quot;,&quot;Inorganic Chemistry&quot;,&quot;Statistics&quot;,%%00010&quot;Introductory Chemistry&quot;,&quot;Introductory Chemistry Lab&quot;,&quot;Mass/Energy Balances&quot;,%%00010&quot;Organic Chemistry&quot;,&quot;Organic Chemistry Lab&quot;,&quot;Physical Sciences&quot;,&quot;Physics (Algebra)&quot;,%%00010&quot;Physics (Calculus)&quot;,&quot;Physics (Conceptual)&quot;,&quot;Economics&quot;,%%00010&quot;Macroeconomics&quot;,&quot;Microeconomics&quot;,&quot;Thermodynamics&quot;)%%00010 %%00010# named according to slide deck%%00010I01 &lt;- c( # I01 &lt;- c(%%0001083,67,87,84,79,79,87,72,88,100,62,63,62,100,96,68,%%0001078,85,82,86,64,63,75,70,100)%%00010 %%00010L09 &lt;- c( # L16 &lt;- c(%%0001079,72,73,67,79,77,80,77,85,99,87,80,66,89,68,82,%%0001090,64,74,74,81,80,78,79,85)%%00010 %%00010knime.out &lt;- data.frame(discipline,shortform,%%00010%%00009I01,L09)%%00010"/>
+<entry key="templateUUID" type="xstring" isnull="true" value=""/>
+<entry key="version" type="xstring" value="version 1.x"/>
+<entry key="Output non numbers (NaN, Inf, -Inf) as missing cells" type="xboolean" value="false"/>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="EXECUTED"/>
+<entry key="factory" type="xstring" value="org.knime.r.RReaderTableNodeFactory"/>
+<entry key="node-name" type="xstring" value="R Source (Table)"/>
+<entry key="node-bundle-name" type="xstring" value="KNIME R-Project nodes"/>
+<entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.r"/>
+<entry key="node-bundle-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-bundle-version" type="xstring" value="3.3.0.v201612012034"/>
+<entry key="node-feature-name" type="xstring" value="KNIME Interactive R Statistics Integration"/>
+<entry key="node-feature-symbolic-name" type="xstring" value="org.knime.features.r.feature.group"/>
+<entry key="node-feature-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-feature-version" type="xstring" value="3.3.0.v201612012034"/>
+<config key="factory_settings"/>
+<entry key="name" type="xstring" value="R Source (Table)"/>
+<entry key="hasContent" type="xboolean" value="true"/>
+<entry key="isInactive" type="xboolean" value="false"/>
+<config key="ports">
+<config key="port_1">
+<entry key="index" type="xint" value="1"/>
+<entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+<entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 25, Cols: 4"/>
+<entry key="port_dir_location" type="xstring" value="port_1"/>
+</config>
+</config>
+<config key="filestores">
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" value="fe36a70e-1695-4e09-a0ec-c3555b44f3cd"/>
+</config>
+</config>
